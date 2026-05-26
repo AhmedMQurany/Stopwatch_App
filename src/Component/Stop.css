@@ -1,54 +1,131 @@
+body {
+    margin: 0;
+    min-height: 100dvh;
 
-body{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+
     background-color: hsl(0, 0%, 95%);
+    padding: 1rem;
+    box-sizing: border-box;
 }
-.stopwatch{
+
+/* Stopwatch container */
+.stopwatch {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 5px solid;
-    border-radius: 50px;
+
+    border: 0.3rem solid;
+    border-radius: 2rem;
+
     background-color: white;
-    padding: 30px;
+
+    padding: 2rem;
+    width: 100%;
+    max-width: 25rem;
+
+    box-sizing: border-box;
 }
-.display{
-    font-size: 5rem;
+
+/* Display */
+.display {
+    font-size: 4rem;
     font-family: monospace;
     font-weight: bold;
+
     color: hsl(0, 0%, 30%);
     text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.75);
-    margin-bottom: 25px;
+
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
-.controls button{
-    font-size: 1.5rem;
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.controls button {
+    font-size: 1.2rem;
     font-weight: bold;
-    padding: 10px 20px;
-    margin: 5px;
-    min-width: 125px;
+
+    padding: 0.6rem 1.2rem;
+    min-width: 7rem;
+
     border: none;
-    border-radius: 10px;
+    border-radius: 0.6rem;
+
     cursor: pointer;
     color: white;
-    transition: background-color 0.5s ease;
+
+    transition: 0.3s;
 }
-.start-button{
+
+/* Buttons */
+.start-button {
     background-color: hsl(115, 100%, 40%);
 }
-.start-button:hover{
+.start-button:hover {
     background-color: hsl(115, 100%, 35%);
 }
-.stop-button{
+
+.stop-button {
     background-color: hsl(10, 90%, 50%);
 }
-.stop-button:hover{
+.stop-button:hover {
     background-color: hsl(10, 90%, 45%);
 }
-.reset-button{
+
+.reset-button {
     background-color: hsl(205, 90%, 60%);
 }
-.reset-button:hover{
+.reset-button:hover {
     background-color: hsl(205, 90%, 55%);
+}
+
+/* ===================== */
+/* Tablet */
+/* ===================== */
+@media screen and (max-width: 768px) {
+    .display {
+        font-size: 3rem;
+    }
+
+    .controls button {
+        font-size: 1rem;
+        min-width: 6rem;
+    }
+
+    .stopwatch {
+        padding: 1.5rem;
+    }
+}
+
+/* ===================== */
+/* Mobile */
+/* ===================== */
+@media screen and (max-width: 480px) {
+    .display {
+        font-size: 2.2rem;
+    }
+
+    .controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .controls button {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .stopwatch {
+        padding: 1rem;
+    }
 }
